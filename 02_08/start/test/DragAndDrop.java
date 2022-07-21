@@ -7,11 +7,19 @@ import org.openqa.selenium.interactions.Actions;
 public class DragAndDrop {
     public static void main(String[] args) {
 
-        System.setProperty("webdriver.chrome.driver", "/Users/meaghanlewis/Downloads/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/Users/adam.tak/Desktop/chromedriver");
 
         WebDriver driver = new ChromeDriver();
 
         driver.get("https://formy-project.herokuapp.com/dragdrop");
+
+        WebElement image = driver.findElement(By.id("image"));
+        WebElement box = driver.findElement(By.id("box"));
+
+        Actions actions = new Actions(driver);
+        actions.dragAndDrop(image, box).build().perform();
+
+        d
 
         driver.quit();
     }
